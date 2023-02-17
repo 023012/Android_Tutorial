@@ -2,9 +2,11 @@ package com.fpt.ss4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: ");
+        Intent shipper = getIntent();
+        String data = shipper.getStringExtra("user");
+        String username = shipper.getStringExtra("username");
+        TextView tvTitle = findViewById(R.id.tvTitle);
+        tvTitle.setText(username);
     }
 
     @Override
