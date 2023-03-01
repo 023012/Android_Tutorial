@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
         db = AppDatabase.getAppDatabase(this);
 
-        insertBook();
-//        updateBookmark(1);
+//        insertBook();
+        updateBookmark(1);
 
 //        findBookmark(1);
 
-//        deleteBookmark(1);
+//        deleteBookmark(4);
 
 //        getAllBookmark();
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateBookmark(int id){
         BookmarkEntity bm = db.bookmarkDao().getBookmark(id);
-        bm.title = "This is title update";
+        bm.title = "This is title ";
         db.bookmarkDao().updateBookmark(bm);
     }
 
